@@ -6,14 +6,14 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
-    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+        compilations.all {
+            kotlinOptions {
+                jvmTarget = "11"
+            }
         }
     }
     

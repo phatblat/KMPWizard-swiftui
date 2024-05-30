@@ -8,9 +8,10 @@ plugins {
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+        compilations.all {
+            kotlinOptions {
+                jvmTarget = "11"
+            }
         }
     }
     
